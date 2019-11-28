@@ -10,15 +10,27 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController{
+    
     @IBOutlet weak var mailField: UITextField!
+    @IBOutlet weak var degreeField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var label1: UITextField!
-    var num : Int = 0
-    @IBAction func pushed_button(_ sender: Any) {
-        num = num + 1
-        label1.text = String(num)
+    var DBRef:DatabaseReference!
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+//        handle = Auth.auth().addStateDidChangeListener{auth, user in　//ログイン画面飛ばすやつ
+//            if user != nil {
+//                self.performSegue(withIdentifier: "toMainView", sender: auth)
+//            }
+//        }
+        
     }
+    
     
     @IBAction func pushed_signup_button(_ sender: Any) {
         let email = mailField.text!
@@ -58,9 +70,22 @@ class ViewController: UIViewController {
             }
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction func add(_ sender: AnyObject) {
+        DBRef = Database.database().reference()
+        //let mail = mailField.text! //この変数を階層構造に用いたい
+        let data_degree = ["degree": degreeField.text!]
+        DBRef.child("user/01").setValue(data_degree)
+    }
+    
+    @IBAction func pushed_Logout_button(_ sender: Any) {
+        _ = Auth.auth()
+        do {
+            try Auth.auth().signOut()
+            //self.performSegue(withIdentifier: "login", sender: firebaseAuth)
+            print("all right")
+        } catch let signOutError as NSError {
+            print("Error signing out: %@",signOutError)
+        }
     }
 }
 
