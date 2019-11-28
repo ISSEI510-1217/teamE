@@ -6,6 +6,8 @@ target 'base_beta' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'FirebaseAuth'
+  pod 'FirebaseAnalytics'
+  pod 'Firebase/Database'
   # Pods for base_beta
 
   target 'base_betaTests' do

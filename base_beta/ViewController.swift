@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 
 class ViewController: UIViewController{
@@ -16,7 +17,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var degreeField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    var DBRef:DatabaseReference!
+    var DBRef: DatabaseReference!
     var handle: AuthStateDidChangeListenerHandle?
     
     
