@@ -75,6 +75,7 @@ class ViewController: UIViewController{
         //let mail = mailField.text! //この変数を階層構造に用いたい
         let data_degree = ["degree": degreeField.text!]
         DBRef.child("user/01").setValue(data_degree)
+        
     }
     
     @IBAction func pushed_Logout_button(_ sender: Any) {
