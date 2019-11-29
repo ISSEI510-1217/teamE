@@ -13,14 +13,14 @@ import FirebaseDatabase
 
 
 class ViewController: UIViewController{
-    
+
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var degreeField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     var DBRef: DatabaseReference!
     var handle: AuthStateDidChangeListenerHandle?
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,10 +29,10 @@ class ViewController: UIViewController{
 //                self.performSegue(withIdentifier: "toMainView", sender: auth)
 //            }
 //        }
-        
+
     }
-    
-    
+
+
     @IBAction func pushed_signup_button(_ sender: Any) {
         let email = mailField.text!
         let password = passwordField.text!
@@ -57,7 +57,7 @@ class ViewController: UIViewController{
             }
         }
     }
-    
+
     @IBAction func pushed_login_button(_ sender: Any) {
         let email = mailField.text!
         let password = passwordField.text!
@@ -76,9 +76,9 @@ class ViewController: UIViewController{
         //let mail = mailField.text! //この変数を階層構造に用いたい
         let data_degree = ["degree": degreeField.text!]
         DBRef.child("user/01").setValue(data_degree)
-        
+
     }
-    
+
     @IBAction func pushed_Logout_button(_ sender: Any) {
         _ = Auth.auth()
         do {
@@ -90,4 +90,3 @@ class ViewController: UIViewController{
         }
     }
 }
-
