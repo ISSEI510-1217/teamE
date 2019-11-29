@@ -8,17 +8,29 @@
 
 import UIKit
 import Firebase
+import QuartzCore
 //import FirebaseAuth
 //import FirebaseDatabase
 
 class AddViewController: UIViewController {
-    @IBOutlet var contentTextView: UITextView! // 追加
+    @IBOutlet var contentTextView:  UITextView! // 追加
     
     var me: AppUser!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 枠のカラー
+        contentTextView.layer.borderColor = UIColor.red.cgColor
+
+        // 枠の幅
+        contentTextView.layer.borderWidth = 1.0
+
+        // 枠を角丸にする場合
+        contentTextView.layer.cornerRadius = 10.0
+        contentTextView.layer.masksToBounds = true
     }
+    
     
     @IBAction func postContent() {
         let content = contentTextView.text!
