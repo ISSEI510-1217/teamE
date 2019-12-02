@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07DD8338CBD728152AC0F5AE /* Pods_base_beta_base_betaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017A8E90111E9D087EA580E4 /* Pods_base_beta_base_betaUITests.framework */; };
 		60052F8B238FB0BF00CDD927 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60052F8A238FB0BF00CDD927 /* User.swift */; };
 		60052F95238FB6FC00CDD927 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60052F94238FB6FC00CDD927 /* TimelineViewController.swift */; };
 		60AB24FC238F9B78005762AD /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AB24FB238F9B78005762AD /* AddViewController.swift */; };
@@ -18,8 +19,10 @@
 		6FD7111B237BDC0B00974421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FD7111A237BDC0B00974421 /* Assets.xcassets */; };
 		6FD71129237BDC0B00974421 /* base_betaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71128237BDC0B00974421 /* base_betaTests.swift */; };
 		6FD71134237BDC0B00974421 /* base_betaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71133237BDC0B00974421 /* base_betaUITests.swift */; };
-		C0E27E2D1F48E27E300C2E2F /* Pods_base_betaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA654D6F24CEA4649AFFAC4 /* Pods_base_betaTests.framework */; };
-		F2B0B005C237AFDAF3B37DC2 /* Pods_base_beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F74CB041FC4161E6F425A7 /* Pods_base_beta.framework */; };
+		ABA827039E09D14901ED149F /* Pods_base_betaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB7EE8A62D5F8C0BA933490 /* Pods_base_betaTests.framework */; };
+		B45E05D63F7FFC911FB87E91 /* Pods_base_beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908AAF3067608C09236E325D /* Pods_base_beta.framework */; };
+		C0E27E2D1F48E27E300C2E2F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		F2B0B005C237AFDAF3B37DC2 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3131D8C8F25D734779B2B73A /* Pods-base_beta-base_betaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_beta-base_betaUITests.debug.xcconfig"; path = "Target Support Files/Pods-base_beta-base_betaUITests/Pods-base_beta-base_betaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4D6BC49A80167A4F7A610BB5 /* Pods_base_beta_base_betaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_beta_base_betaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		017A8E90111E9D087EA580E4 /* Pods_base_beta_base_betaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_beta_base_betaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60052F8A238FB0BF00CDD927 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		60052F94238FB6FC00CDD927 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		60AB24FB238F9B78005762AD /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -62,8 +64,11 @@
 		7790636FC7AC90C8F2A49B46 /* Pods-base_beta-base_betaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_beta-base_betaUITests.release.xcconfig"; path = "Target Support Files/Pods-base_beta-base_betaUITests/Pods-base_beta-base_betaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E1F9F8D86456B88B0E536AC /* Pods-base_beta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_beta.release.xcconfig"; path = "Target Support Files/Pods-base_beta/Pods-base_beta.release.xcconfig"; sourceTree = "<group>"; };
 		865A639F22C40646C782095E /* Pods-base_beta-base_betaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_beta-base_betaUITests.debug.xcconfig"; path = "Target Support Files/Pods-base_beta-base_betaUITests/Pods-base_beta-base_betaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		908AAF3067608C09236E325D /* Pods_base_beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDB7EE8A62D5F8C0BA933490 /* Pods_base_betaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_betaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2114F8B229E3A10614C9AF /* Pods-base_betaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_betaTests.debug.xcconfig"; path = "Target Support Files/Pods-base_betaTests/Pods-base_betaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D02E0258ECF16FA0661CA9AA /* Pods-base_beta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_beta.debug.xcconfig"; path = "Target Support Files/Pods-base_beta/Pods-base_beta.debug.xcconfig"; sourceTree = "<group>"; };
+		FAFE23DD5A5D734F54C62370 /* Pods-base_betaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_betaTests.release.xcconfig"; path = "Target Support Files/Pods-base_betaTests/Pods-base_betaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2B0B005C237AFDAF3B37DC2 /* Pods_base_beta.framework in Frameworks */,
+				F2B0B005C237AFDAF3B37DC2 /* BuildFile in Frameworks */,
+				B45E05D63F7FFC911FB87E91 /* Pods_base_beta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0E27E2D1F48E27E300C2E2F /* Pods_base_betaTests.framework in Frameworks */,
+				C0E27E2D1F48E27E300C2E2F /* BuildFile in Frameworks */,
+				ABA827039E09D14901ED149F /* Pods_base_betaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A0C4589E33E41D0CBE8F2B0 /* Pods_base_beta_base_betaUITests.framework in Frameworks */,
+				07DD8338CBD728152AC0F5AE /* Pods_base_beta_base_betaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +109,7 @@
 				865A639F22C40646C782095E /* Pods-base_beta-base_betaUITests.debug.xcconfig */,
 				7790636FC7AC90C8F2A49B46 /* Pods-base_beta-base_betaUITests.release.xcconfig */,
 				CC2114F8B229E3A10614C9AF /* Pods-base_betaTests.debug.xcconfig */,
-				0ADC2DA2D59F3EB8F7D79457 /* Pods-base_betaTests.release.xcconfig */,
+				FAFE23DD5A5D734F54C62370 /* Pods-base_betaTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -167,9 +174,9 @@
 		E9B28FFE9ECFEB5C73B3EB83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43F74CB041FC4161E6F425A7 /* Pods_base_beta.framework */,
-				3E5B1185AD62F5749356360C /* Pods_base_beta_base_betaUITests.framework */,
-				1DA654D6F24CEA4649AFFAC4 /* Pods_base_betaTests.framework */,
+				908AAF3067608C09236E325D /* Pods_base_beta.framework */,
+				017A8E90111E9D087EA580E4 /* Pods_base_beta_base_betaUITests.framework */,
+				BDB7EE8A62D5F8C0BA933490 /* Pods_base_betaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -642,7 +649,7 @@
 		};
 		6FD7113D237BDC0B00974421 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ADC2DA2D59F3EB8F7D79457 /* Pods-base_betaTests.release.xcconfig */;
+			baseConfigurationReference = FAFE23DD5A5D734F54C62370 /* Pods-base_betaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
