@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A0C4589E33E41D0CBE8F2B0 /* Pods_base_beta_base_betaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E5B1185AD62F5749356360C /* Pods_base_beta_base_betaUITests.framework */; };
+		60052F8B238FB0BF00CDD927 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60052F8A238FB0BF00CDD927 /* User.swift */; };
+		60052F95238FB6FC00CDD927 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60052F94238FB6FC00CDD927 /* TimelineViewController.swift */; };
+		60AB24FC238F9B78005762AD /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AB24FB238F9B78005762AD /* AddViewController.swift */; };
 		6F52FF4E237C506500DB3580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */; };
 		6FD71112237BDC0700974421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71111237BDC0700974421 /* AppDelegate.swift */; };
 		6FD71114237BDC0700974421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71113237BDC0700974421 /* SceneDelegate.swift */; };
@@ -38,10 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0ADC2DA2D59F3EB8F7D79457 /* Pods-base_betaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_betaTests.release.xcconfig"; path = "Target Support Files/Pods-base_betaTests/Pods-base_betaTests.release.xcconfig"; sourceTree = "<group>"; };
-		1DA654D6F24CEA4649AFFAC4 /* Pods_base_betaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_betaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E5B1185AD62F5749356360C /* Pods_base_beta_base_betaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_beta_base_betaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43F74CB041FC4161E6F425A7 /* Pods_base_beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3131D8C8F25D734779B2B73A /* Pods-base_beta-base_betaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-base_beta-base_betaUITests.debug.xcconfig"; path = "Target Support Files/Pods-base_beta-base_betaUITests/Pods-base_beta-base_betaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4D6BC49A80167A4F7A610BB5 /* Pods_base_beta_base_betaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_beta_base_betaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60052F8A238FB0BF00CDD927 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		60052F94238FB6FC00CDD927 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		60AB24FB238F9B78005762AD /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6FD7110E237BDC0700974421 /* base_beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = base_beta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD71111237BDC0700974421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +135,9 @@
 				6FD71111237BDC0700974421 /* AppDelegate.swift */,
 				6FD71113237BDC0700974421 /* SceneDelegate.swift */,
 				6FD71115237BDC0700974421 /* ViewController.swift */,
+				60052F8A238FB0BF00CDD927 /* User.swift */,
+				60052F94238FB6FC00CDD927 /* TimelineViewController.swift */,
+				60AB24FB238F9B78005762AD /* AddViewController.swift */,
 				6FD71117237BDC0700974421 /* Main.storyboard */,
 				6FD7111A237BDC0B00974421 /* Assets.xcassets */,
 				6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */,
@@ -407,9 +413,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60AB24FC238F9B78005762AD /* AddViewController.swift in Sources */,
 				6FD71116237BDC0700974421 /* ViewController.swift in Sources */,
 				6FD71112237BDC0700974421 /* AppDelegate.swift in Sources */,
 				6FD71114237BDC0700974421 /* SceneDelegate.swift in Sources */,
+				60052F8B238FB0BF00CDD927 /* User.swift in Sources */,
+				60052F95238FB6FC00CDD927 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,7 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69K4AZ57PG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = base_beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -595,7 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69K4AZ57PG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = base_beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

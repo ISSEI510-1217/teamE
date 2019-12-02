@@ -4,10 +4,13 @@ platform :ios, '9.0'
 target 'base_beta' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+#  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'FirebaseAuth'
   pod 'FirebaseAnalytics'
   pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   # Pods for base_beta
 
   target 'base_betaTests' do
