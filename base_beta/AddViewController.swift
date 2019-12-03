@@ -10,12 +10,13 @@ import UIKit
 import Firebase
 import QuartzCore
 //import FirebaseAuth
-//import FirebaseDatabase
+import FirebaseDatabase
 
 class AddViewController: UIViewController {
     @IBOutlet var contentTextView:  UITextView! // 追加
     
     var me: AppUser!
+    var DBRef: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,15 @@ class AddViewController: UIViewController {
         toolBar.items = [flexibleSpaceBarButton, doneButton] // ツールバーにボタンを配置
         toolBar.sizeToFit()
         contentTextView.inputAccessoryView = toolBar // テキストビューにツールバーをセット
+    }
+    
+    // RealtimeDataBaseにデータを保存する
+    @IBAction func tappedPostButton(_ sender: AnyObject){
+        view.endEditing(true)
+        
+        DBRef = Database.database().reference()
+        let data_content = ["content": contentTextView.text!]
+        DBRef.child("questions").childByAutoId().setValue(data_content) // Databaseに質問の内容を保存
     }
 
     // キーボードを閉じる処理。
