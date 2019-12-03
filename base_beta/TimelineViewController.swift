@@ -82,7 +82,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return postArray.count
         //セクションの数
         return postArray.count
     }

@@ -34,8 +34,9 @@ class AddViewController: UIViewController {
     
     @IBAction func postContent() {
         let content = contentTextView.text!
+        //let user = AppUser.init(data: [String : Any])
         let saveDocument = Firestore.firestore().collection("posts").document()
-//        let userID = Auth.auth().currentUser!.uid
+        //_ = Auth.auth().currentUser!.uid
         saveDocument.setData([
             "content": content,
             "postID": saveDocument.documentID,
