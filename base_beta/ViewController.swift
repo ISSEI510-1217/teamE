@@ -80,6 +80,7 @@ class ViewController: UIViewController{
 
     }
 
+    //実装途中
     @IBAction func pushed_Logout_button(_ sender: Any) {
         _ = Auth.auth()
         do {
@@ -90,4 +91,5 @@ class ViewController: UIViewController{
             print("Error signing out: %@",signOutError)
         }
     }
+    @IBOutlet weak var imageView: UIImageView!
 }
