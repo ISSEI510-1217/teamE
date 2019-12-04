@@ -16,6 +16,7 @@ class AddViewController: UIViewController {
     @IBOutlet var contentTextView:  UITextView! // 追加
     
     var me: AppUser!
+    var DBRef: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,15 @@ class AddViewController: UIViewController {
         toolBar.sizeToFit()
         contentTextView.inputAccessoryView = toolBar // テキストビューにツールバーをセット
     }
+    
+    // RealtimeDataBaseに投稿内容を保存する
+    // @IBAction func tappedPostButton(_ sender: AnyObject){ // ボタン未実装
+    //     view.endEditing(true)
+        
+    //     DBRef = Database.database().reference()
+    //     let data_content = ["content": contentTextView.text!]
+    //     DBRef.child("questions").childByAutoId().setValue(data_content) // Databaseに質問の内容を保存
+    // }
 
     // キーボードを閉じる処理。
     @objc func dismissKeyboard() {

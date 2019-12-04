@@ -72,12 +72,15 @@ class ViewController: UIViewController{
             }
         }
     }
+    
+    // Realtime Databaseにユーザー情報を保存
     @IBAction func add(_ sender: AnyObject) {
+        view.endEditing(true)
+        
         DBRef = Database.database().reference()
-        //let mail = mailField.text! //この変数を階層構造に用いたい
-        let data_degree = ["degree": degreeField.text!]
-        DBRef.child("user/01").setValue(data_degree)
-
+        let userID = Auth.auth().currentUser!.uid
+        let email_degree = ["email":mailField.text!, "degree": degreeField.text!]
+        DBRef.child("users").child(userID).setValue(email_degree)
     }
 
     //実装途中
