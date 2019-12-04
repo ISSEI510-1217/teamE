@@ -72,6 +72,8 @@ class ViewController: UIViewController{
             }
         }
     }
+    
+    // Realtime Databaseにユーザー情報を保存
     @IBAction func add(_ sender: AnyObject) {
         view.endEditing(true)
         
@@ -79,7 +81,6 @@ class ViewController: UIViewController{
         let userID = Auth.auth().currentUser!.uid
         let email_degree = ["email":mailField.text!, "degree": degreeField.text!]
         DBRef.child("users").child(userID).setValue(email_degree)
-
     }
 
     //実装途中

@@ -159,15 +159,6 @@
                                     <action selector="postContent" destination="QaC-22-ujV" eventType="touchUpInside" id="Qe6-gz-20l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0x-YJ-jOT">
-                                <rect key="frame" x="299" y="622" width="115" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="投稿2"/>
-                                <connections>
-                                    <action selector="tappedPostButton:" destination="QaC-22-ujV" eventType="touchUpInside" id="icE-He-rHU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="wI6-gA-QJ7"/>
