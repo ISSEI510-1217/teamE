@@ -1,10 +1,11 @@
 //
-//  User.swift
+//  AppUser.swift
 //  base_beta
 //
-//  Created by 後藤壱成 on 2019/11/28.
+//  Created by 後藤壱成 on 2019/12/04.
 //  Copyright © 2019 kaito. All rights reserved.
 //
+
 import Foundation
 import Firebase
 

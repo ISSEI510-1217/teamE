@@ -24,12 +24,12 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        handle = Auth.auth().addStateDidChangeListener{auth, user in　//ログイン画面飛ばすやつ
-//            if user != nil {
-//                self.performSegue(withIdentifier: "toMainView", sender: auth)
-//            }
-//        }
+//        Do any additional setup after loading the view.
+        handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
+            if user != nil {
+                self.performSegue(withIdentifier: "toMainView", sender: auth)
+            }
+        }
 
     }
 
@@ -79,7 +79,7 @@ class ViewController: UIViewController{
         
         DBRef = Database.database().reference()
         let userID = Auth.auth().currentUser!.uid
-        let email_degree = ["email":mailField.text!, "degree": degreeField.text!]
+        let email_degree = ["email":mailField.text!, "degree": degreeField.text!, "学籍番号": numField.text!]
         DBRef.child("users").child(userID).setValue(email_degree)
     }
 
