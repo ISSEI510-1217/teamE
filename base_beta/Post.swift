@@ -12,6 +12,7 @@ import Firebase
 struct Post {
     let content: String
     let postID: String
+    //let orderCnt: Int
     //let senderID: String
     let createdAt: Timestamp
     let updatedAt: Timestamp
@@ -19,6 +20,7 @@ struct Post {
     init(data: [String: Any]) {
         content = data["content"] as! String
         postID = data["postID"] as! String
+        //orderCnt = data["orderCnt"] as! Int
         //senderID = data["senderID"] as! String
         createdAt = data["createdAt"] as! Timestamp
         updatedAt = data["updatedAt"] as! Timestamp
