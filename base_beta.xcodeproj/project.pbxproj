@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		07DD8338CBD728152AC0F5AE /* Pods_base_beta_base_betaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017A8E90111E9D087EA580E4 /* Pods_base_beta_base_betaUITests.framework */; };
-		60052F8B238FB0BF00CDD927 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60052F8A238FB0BF00CDD927 /* User.swift */; };
 		60052F95238FB6FC00CDD927 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60052F94238FB6FC00CDD927 /* TimelineViewController.swift */; };
+		603E7A5A23975DB8003C1732 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E7A5923975DB8003C1732 /* Post.swift */; };
+		603E7A5E23980108003C1732 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E7A5D23980108003C1732 /* AppUser.swift */; };
 		60AB24FC238F9B78005762AD /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AB24FB238F9B78005762AD /* AddViewController.swift */; };
+		60FE7D2623961D35000C771D /* background1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60FE7D2523961D35000C771D /* background1.jpg */; };
 		6F52FF4E237C506500DB3580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */; };
 		6FD71112237BDC0700974421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71111237BDC0700974421 /* AppDelegate.swift */; };
 		6FD71114237BDC0700974421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71113237BDC0700974421 /* SceneDelegate.swift */; };
@@ -44,9 +46,11 @@
 
 /* Begin PBXFileReference section */
 		017A8E90111E9D087EA580E4 /* Pods_base_beta_base_betaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_base_beta_base_betaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		60052F8A238FB0BF00CDD927 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		60052F94238FB6FC00CDD927 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		603E7A5923975DB8003C1732 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		603E7A5D23980108003C1732 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		60AB24FB238F9B78005762AD /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		60FE7D2523961D35000C771D /* background1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background1.jpg; path = "../../../../大学_講義用_教材/2年次-後期/ソフトウェア開発演習/background1.jpg"; sourceTree = "<group>"; };
 		6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6FD7110E237BDC0700974421 /* base_beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = base_beta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD71111237BDC0700974421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,9 +143,11 @@
 		6FD71110237BDC0700974421 /* base_beta */ = {
 			isa = PBXGroup;
 			children = (
+				60FE7D2523961D35000C771D /* background1.jpg */,
 				6FD71111237BDC0700974421 /* AppDelegate.swift */,
 				6FD71113237BDC0700974421 /* SceneDelegate.swift */,
-				60052F8A238FB0BF00CDD927 /* User.swift */,
+				603E7A5D23980108003C1732 /* AppUser.swift */,
+				603E7A5923975DB8003C1732 /* Post.swift */,
 				6FD71115237BDC0700974421 /* ViewController.swift */,
 				60052F94238FB6FC00CDD927 /* TimelineViewController.swift */,
 				60AB24FB238F9B78005762AD /* AddViewController.swift */,
@@ -293,6 +299,7 @@
 				6FD7111B237BDC0B00974421 /* Assets.xcassets in Resources */,
 				6FD71119237BDC0700974421 /* Main.storyboard in Resources */,
 				6F52FF4E237C506500DB3580 /* GoogleService-Info.plist in Resources */,
+				60FE7D2623961D35000C771D /* background1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +427,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603E7A5E23980108003C1732 /* AppUser.swift in Sources */,
 				60AB24FC238F9B78005762AD /* AddViewController.swift in Sources */,
 				6FD71116237BDC0700974421 /* ViewController.swift in Sources */,
 				6FD71112237BDC0700974421 /* AppDelegate.swift in Sources */,
 				6FD71114237BDC0700974421 /* SceneDelegate.swift in Sources */,
-				60052F8B238FB0BF00CDD927 /* User.swift in Sources */,
+				603E7A5A23975DB8003C1732 /* Post.swift in Sources */,
 				60052F95238FB6FC00CDD927 /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,13 +600,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6VT9HFGX5W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = base_beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "base-beta";
+				PRODUCT_BUNDLE_IDENTIFIER = "software.ex.base-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -611,13 +619,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6VT9HFGX5W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = base_beta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "base-beta";
+				PRODUCT_BUNDLE_IDENTIFIER = "software.ex.base-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

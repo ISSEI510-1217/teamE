@@ -14,13 +14,20 @@ import QuartzCore
 
 class AddViewController: UIViewController {
     @IBOutlet var contentTextView:  UITextView! // 追加
-    
+
     var me: AppUser!
-    var DBRef: DatabaseReference!
+
+    //var DBRef: DatabaseReference!
+
+    var database: Firestore!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        setupTextView()
+        database = Firestore.firestore()
+
         // 枠のカラー
         contentTextView.layer.borderColor = UIColor.red.cgColor
 
@@ -31,26 +38,25 @@ class AddViewController: UIViewController {
         contentTextView.layer.cornerRadius = 10.0
         contentTextView.layer.masksToBounds = true
     }
-    
-    
+
+
     @IBAction func postContent() {
         let content = contentTextView.text!
-        //let user = AppUser.init(data: [String : Any])
         let saveDocument = Firestore.firestore().collection("posts").document()
-        //_ = Auth.auth().currentUser!.uid
+        _ = Auth.auth().currentUser!.uid
         saveDocument.setData([
-            "content": content,
-            "postID": saveDocument.documentID,
-            //"senderID": user.uid,
-            "createdAt": FieldValue.serverTimestamp(),
-            "updatedAt": FieldValue.serverTimestamp()
+            "content": content,//投稿内容
+            "postID": saveDocument.documentID,//質問投稿のID
+            //"senderID": me.userID!,
+            "createdAt": FieldValue.serverTimestamp(),//質問した日時
+            "updatedAt": FieldValue.serverTimestamp(),//最新の変更時刻
         ]) { error in
             if error == nil {
                 self.dismiss(animated: true, completion: nil)
             }
         }
     }
-    
+
     func setupTextView() {
         let toolBar = UIToolbar() // キーボードの上に置くツールバーの生成
         let flexibleSpaceBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) // 今回は、右端にDoneボタンを置きたいので、左に空白を入れる
@@ -59,11 +65,11 @@ class AddViewController: UIViewController {
         toolBar.sizeToFit()
         contentTextView.inputAccessoryView = toolBar // テキストビューにツールバーをセット
     }
-    
+
     // RealtimeDataBaseに投稿内容を保存する
     // @IBAction func tappedPostButton(_ sender: AnyObject){ // ボタン未実装
     //     view.endEditing(true)
-        
+
     //     DBRef = Database.database().reference()
     //     let data_content = ["content": contentTextView.text!]
     //     DBRef.child("questions").childByAutoId().setValue(data_content) // Databaseに質問の内容を保存
@@ -73,5 +79,5 @@ class AddViewController: UIViewController {
     @objc func dismissKeyboard() {
         contentTextView.resignFirstResponder()
     }
-    
+
 }

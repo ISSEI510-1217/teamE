@@ -79,7 +79,7 @@ class ViewController: UIViewController{
         
         DBRef = Database.database().reference()
         let userID = Auth.auth().currentUser!.uid
-        let email_degree = ["email":mailField.text!, "degree": degreeField.text!]
+        let email_degree = ["email":mailField.text!, "degree": degreeField.text!, "学籍番号": numField.text!]
         DBRef.child("users").child(userID).setValue(email_degree)
     }
 
