@@ -21,7 +21,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //    var ref: DatabaseReference!
 //    ref = Database.database().reference()
     
-    //String型の空の配列postArrayを定義
+    //Post型の空の配列postArrayを定義
     var postArray: [Post] = []
 
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        database.collection("posts").order(by: "createdAt").getDocuments { (snapshot, error) in
+        database.collection("posts").order(by: "updatedAt").getDocuments { (snapshot, error) in
             if error == nil, let snapshot = snapshot {
                 self.postArray = []
                 for document in snapshot.documents {

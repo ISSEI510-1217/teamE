@@ -139,14 +139,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="投稿内容" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iV-Df-6bg">
-                                <rect key="frame" x="219" y="62" width="274" height="121"/>
+                                <rect key="frame" x="247" y="127" width="274" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-1u-jLR">
-                                <rect key="frame" x="111" y="223" width="490" height="271"/>
+                                <rect key="frame" x="149" y="256" width="490" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -154,7 +154,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRs-BB-heh">
-                                <rect key="frame" x="446" y="609" width="193" height="104"/>
+                                <rect key="frame" x="446" y="644" width="193" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
@@ -163,6 +163,17 @@
                                 </state>
                                 <connections>
                                     <action selector="postContent" destination="QaC-22-ujV" eventType="touchUpInside" id="Qe6-gz-20l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-n2-6pe">
+                                <rect key="frame" x="56" y="60" width="101" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="backViewController:" destination="QaC-22-ujV" eventType="touchUpInside" id="vtK-us-x6C"/>
+                                    <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" id="RPV-va-HsH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -175,10 +186,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNM-4A-FQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072" y="-279"/>
+            <point key="canvasLocation" x="2071.875" y="-279.4921875"/>
         </scene>
     </scenes>
     <resources>
         <image name="background1.jpg" width="1080" height="1350"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="RPV-va-HsH"/>
+    </inferredMetricsTieBreakers>
 </document>

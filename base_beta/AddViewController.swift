@@ -79,5 +79,8 @@ class AddViewController: UIViewController {
     @objc func dismissKeyboard() {
         contentTextView.resignFirstResponder()
     }
-
+    //[戻る]ボタン追加
+    @IBAction func backViewController(_ sender: Any) {
+    }
+    
 }
