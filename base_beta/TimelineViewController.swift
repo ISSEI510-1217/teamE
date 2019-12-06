@@ -14,15 +14,13 @@ import FirebaseFirestore
 class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
-
+    
     var me: AppUser!
     var database: Firestore! // 宣言
     
-//    var ref: DatabaseReference!
-//    ref = Database.database().reference()
-    
     //Post型の空の配列postArrayを定義
     var postArray: [Post] = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +34,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //        view.isUserInteractionEnabled = true
 //        view.addGestureRecognizer(press)
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

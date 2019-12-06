@@ -24,7 +24,6 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        Do any additional setup after loading the view.
         handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
             if user != nil {
                 self.performSegue(withIdentifier: "toMainView", sender: auth)
