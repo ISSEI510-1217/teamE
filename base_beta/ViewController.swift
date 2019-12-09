@@ -11,7 +11,6 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-
 class ViewController: UIViewController{
 
     @IBOutlet weak var mailField: UITextField!
@@ -24,15 +23,15 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewDidAppear(_ animated: Bool){
         handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
             if user != nil {
                 self.performSegue(withIdentifier: "toMainView", sender: auth)
             }
         }
-
     }
-
-
+    
     @IBAction func pushed_signup_button(_ sender: Any) {
         let email = mailField.text!
         let password = passwordField.text!

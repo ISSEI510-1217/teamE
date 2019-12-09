@@ -65,13 +65,13 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //        if segue.identifier == "Add" {
 //            let destination = segue.destination as! AddViewController
 //            destination.me = sender as? AppUser
-//        } else if segue.identifier == "Settings" {
-//            let destination = segue.destination as! SettingsViewController
-//            destination.me = me
+//        } else if segue.identifier == "Menu" {
+//            let destination = segue.destination as! MenuViewController
+//            destination.me = me//sender as? AppUser
 //        }
-        let destination = segue.destination as! AddViewController // segue.destinationで遷移先のViewControllerが取得可能。
-        //destination.me = sender as! AppUser
-        destination.me = sender as? AppUser
+
+//        let destination = segue.destination as! AddViewController // segue.destinationで遷移先のViewControllerが取得可能。
+//        destination.me = sender as? AppUser
     }
     
 //    @objc
@@ -104,4 +104,11 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //                }
         return cell
     }
+//    @IBAction func MenuBitton(_ sender: Any) {        performSegue(withIdentifier: "Menu", sender: me)
+    
+    @IBAction func MenuButton(_ sender: Any) {
+        performSegue(withIdentifier: "Menu", sender: me)
+    }
+    
+    
 }

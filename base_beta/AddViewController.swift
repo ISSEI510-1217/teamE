@@ -82,6 +82,7 @@ class AddViewController: UIViewController {
     
     //[戻る]ボタン追加
     @IBAction func backViewController(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
