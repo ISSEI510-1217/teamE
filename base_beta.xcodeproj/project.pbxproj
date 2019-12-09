@@ -11,6 +11,7 @@
 		60052F95238FB6FC00CDD927 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60052F94238FB6FC00CDD927 /* TimelineViewController.swift */; };
 		603E7A5A23975DB8003C1732 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E7A5923975DB8003C1732 /* Post.swift */; };
 		603E7A5E23980108003C1732 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E7A5D23980108003C1732 /* AppUser.swift */; };
+		60A0B293239DCFA0006AF664 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A0B292239DCFA0006AF664 /* MenuViewController.swift */; };
 		60AB24FC238F9B78005762AD /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AB24FB238F9B78005762AD /* AddViewController.swift */; };
 		6F52FF4E237C506500DB3580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */; };
 		6FD71112237BDC0700974421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71111237BDC0700974421 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		60052F94238FB6FC00CDD927 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		603E7A5923975DB8003C1732 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		603E7A5D23980108003C1732 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		60A0B292239DCFA0006AF664 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		60AB24FB238F9B78005762AD /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6FD7110E237BDC0700974421 /* base_beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = base_beta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				6FD71115237BDC0700974421 /* ViewController.swift */,
 				60052F94238FB6FC00CDD927 /* TimelineViewController.swift */,
 				60AB24FB238F9B78005762AD /* AddViewController.swift */,
+				60A0B292239DCFA0006AF664 /* MenuViewController.swift */,
 				6FD71117237BDC0700974421 /* Main.storyboard */,
 				6FD7111A237BDC0B00974421 /* Assets.xcassets */,
 				6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */,
@@ -430,6 +433,7 @@
 				6FD71114237BDC0700974421 /* SceneDelegate.swift in Sources */,
 				603E7A5A23975DB8003C1732 /* Post.swift in Sources */,
 				60052F95238FB6FC00CDD927 /* TimelineViewController.swift in Sources */,
+				60A0B293239DCFA0006AF664 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

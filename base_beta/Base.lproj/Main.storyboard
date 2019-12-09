@@ -76,14 +76,14 @@
                         <outlet property="mailField" destination="NxN-Z2-YdR" id="bZL-gf-W1Z"/>
                         <outlet property="numField" destination="EFL-kq-Djt" id="vmQ-5g-KBP"/>
                         <outlet property="passwordField" destination="37R-E3-ITP" id="96H-mN-fHJ"/>
-                        <segue destination="hvl-Bu-lgI" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="EHu-iZ-2ve"/>
+                        <segue destination="wqq-ig-lhG" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" id="Yfx-Fj-gp3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="105.46875" y="143.5546875"/>
         </scene>
-        <!--Timeline View Controller-->
+        <!--TimeLine-->
         <scene sceneID="1fF-Zg-dsZ">
             <objects>
                 <viewController id="hvl-Bu-lgI" customClass="TimelineViewController" customModule="base_beta" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,15 +92,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-uk-uaT">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="51" width="768" height="973"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="xx7-Rj-2eB">
-                                        <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="47" id="xx7-Rj-2eB">
+                                        <rect key="frame" x="0.0" y="28" width="768" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xx7-Rj-2eB" id="xR7-cV-dIw">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -114,21 +114,27 @@
                                 <state key="normal" title="⊕"/>
                                 <connections>
                                     <action selector="toAddViewController:" destination="hvl-Bu-lgI" eventType="touchUpInside" id="7uG-V9-Ego"/>
+                                    <segue destination="QaC-22-ujV" kind="presentation" identifier="Add" modalPresentationStyle="fullScreen" id="pTs-Uh-fHn"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ow4-Iz-P38"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UZz-yZ-Ysg"/>
+                    <navigationItem key="navigationItem" title="TimeLine" id="SuA-Jb-Yt9">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu-filled" id="PAU-mi-hrl">
+                            <connections>
+                                <segue destination="Hlv-5l-DX9" kind="presentation" identifier="Menu" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="7VM-co-rPC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="WnI-uk-uaT" id="mvd-fH-kbW"/>
-                        <segue destination="QaC-22-ujV" kind="presentation" identifier="Add" modalPresentationStyle="fullScreen" id="qyQ-Pd-kgo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCW-Zp-jpR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973.4375" y="143.5546875"/>
+            <point key="canvasLocation" x="933.59375" y="143.5546875"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="OBl-sT-unM">
@@ -173,7 +179,6 @@
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <action selector="backViewController:" destination="QaC-22-ujV" eventType="touchUpInside" id="vtK-us-x6C"/>
-                                    <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RPV-va-HsH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -182,17 +187,66 @@
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="3qW-1u-jLR" id="6FK-bb-wFw"/>
+                        <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="WDq-CE-I4e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNM-4A-FQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071.875" y="-279.4921875"/>
+            <point key="canvasLocation" x="1823" y="-109"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="Qaa-TM-JDt">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="Hlv-5l-DX9" customClass="MenuViewController" customModule="base_beta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hjh-My-TN2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USC-rN-OBc">
+                                <rect key="frame" x="20" y="76" width="300" height="928"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="PKa-p5-roR"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuView" destination="USC-rN-OBc" id="DUS-mg-rep"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ll2-Qr-GUB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822.65625" y="-904.10156249999989"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tQT-H7-AX0">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DqI-xl-zUv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="wqq-ig-lhG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tXr-yv-ppL">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hvl-Bu-lgI" kind="relationship" relationship="rootViewController" id="pIu-wn-ovr"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="105" y="944"/>
         </scene>
     </scenes>
     <resources>
         <image name="background1" width="1080" height="1350"/>
+        <image name="menu-filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RPV-va-HsH"/>
+        <segue reference="WDq-CE-I4e"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
