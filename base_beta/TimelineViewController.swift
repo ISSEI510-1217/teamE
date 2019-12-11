@@ -5,6 +5,9 @@
 //  Created by 後藤壱成 on 2019/11/28.
 //  Copyright © 2019 kaito. All rights reserved.
 //
+//  TimeLine画面についてswift file
+
+//
 
 import UIKit
 import Firebase
@@ -29,6 +32,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self  
         tableView.dataSource = self
         
+        super.viewDidLoad()
+
+        
 //        let press = UILongPressGestureRecognizer(target: self, action: #selector(pressScreen))
 //        press.minimumPressDuration = 1.5
 //        view.isUserInteractionEnabled = true
@@ -45,7 +51,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                     let post = Post(data: data)
                     self.postArray.append(post)
                 }
-                //print(self.postArray)
                 self.tableView.reloadData()
             }
         }
@@ -86,8 +91,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func toAddViewController(_ sender: Any) {
         performSegue(withIdentifier: "Add", sender: me)
     }
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //セクションの数
         return postArray.count
@@ -96,19 +100,16 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         cell.textLabel?.text = postArray[indexPath.row].content
+      
+        return cell
 //        database.collection("users").document(postArray[indexPath.row].senderID).getDocument { (snapshot, error) in
 //                    if error == nil, let snapshot = snapshot, let data = snapshot.data() {
 //                        let appUser = AppUser(data: data)
 //                        cell.detailTextLabel?.text = appUser.userName
 //                    }
 //                }
-        return cell
     }
-//    @IBAction func MenuBitton(_ sender: Any) {        performSegue(withIdentifier: "Menu", sender: me)
-    
     @IBAction func MenuButton(_ sender: Any) {
         performSegue(withIdentifier: "Menu", sender: me)
     }
-    
-    
 }

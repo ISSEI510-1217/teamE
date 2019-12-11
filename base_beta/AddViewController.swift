@@ -5,6 +5,9 @@
 //  Created by 後藤壱成 on 2019/11/28.
 //  Copyright © 2019 kaito. All rights reserved.
 //
+//  質問を投稿するためのswift file
+//  ここで, AddViewControllerに表示されているものすべてを扱っている.
+//
 
 import UIKit
 import Firebase
@@ -20,6 +23,7 @@ class AddViewController: UIViewController {
     //var DBRef: DatabaseReference!
 
     var database: Firestore!
+    
 
 
     override func viewDidLoad() {

@@ -91,18 +91,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-uk-uaT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-uk-uaT">
                                 <rect key="frame" x="0.0" y="51" width="768" height="973"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="47" id="xx7-Rj-2eB">
-                                        <rect key="frame" x="0.0" y="28" width="768" height="47"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="90" id="xx7-Rj-2eB">
+                                        <rect key="frame" x="0.0" y="28" width="768" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xx7-Rj-2eB" id="xR7-cV-dIw">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="47"/>
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xx7-Rj-2eB" id="xR7-cV-dIw" customClass="UITableViewCell">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="7E9-jF-aH2" kind="presentation" modalPresentationStyle="fullScreen" id="Tzq-cI-Yem"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -118,12 +123,13 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ow4-Iz-P38"/>
                     </view>
                     <navigationItem key="navigationItem" title="TimeLine" id="SuA-Jb-Yt9">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu-filled" id="PAU-mi-hrl">
                             <connections>
+                                <action selector="MenuButton:" destination="hvl-Bu-lgI" id="iDC-gh-mKu"/>
                                 <segue destination="Hlv-5l-DX9" kind="presentation" identifier="Menu" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="7VM-co-rPC"/>
                             </connections>
                         </barButtonItem>
@@ -187,12 +193,41 @@
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="3qW-1u-jLR" id="6FK-bb-wFw"/>
-                        <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="WDq-CE-I4e"/>
+                        <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" id="jjc-Pz-gi2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNM-4A-FQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1823" y="-109"/>
+        </scene>
+        <!--Post Content-->
+        <scene sceneID="qlM-rd-mif">
+            <objects>
+                <viewController id="7E9-jF-aH2" customClass="PostContent" customModule="base_beta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8RO-jO-UR9">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0k-iM-E5Y">
+                                <rect key="frame" x="90" y="94" width="101" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="backTable:" destination="7E9-jF-aH2" eventType="touchUpInside" id="QXQ-9y-LfX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="e7b-RY-sbk"/>
+                    </view>
+                    <connections>
+                        <segue destination="hvl-Bu-lgI" kind="presentation" identifier="backTable" modalPresentationStyle="fullScreen" id="tjh-FZ-Wvv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cag-62-S15" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697.65625" y="627.5390625"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="Qaa-TM-JDt">
@@ -202,10 +237,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USC-rN-OBc">
-                                <rect key="frame" x="20" y="76" width="300" height="928"/>
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USC-rN-OBc">
+                                <rect key="frame" x="10" y="76" width="300" height="928"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="20"/>
@@ -227,7 +262,6 @@
         <!--Navigation Controller-->
         <scene sceneID="tQT-H7-AX0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DqI-xl-zUv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="wqq-ig-lhG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tXr-yv-ppL">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
@@ -237,6 +271,7 @@
                         <segue destination="hvl-Bu-lgI" kind="relationship" relationship="rootViewController" id="pIu-wn-ovr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DqI-xl-zUv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="105" y="944"/>
         </scene>
@@ -246,7 +281,7 @@
         <image name="menu-filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WDq-CE-I4e"/>
+        <segue reference="tjh-FZ-Wvv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

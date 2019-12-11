@@ -5,6 +5,9 @@
 //  Created by 後藤壱成 on 2019/12/09.
 //  Copyright © 2019 kaito. All rights reserved.
 //
+//  Menu barのためだけのswift file
+//  ここに追加したいmenu buttonを追加していく.
+//
 
 import UIKit
 
