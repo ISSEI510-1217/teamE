@@ -5,6 +5,9 @@
 //  Created by 金城海斗 on 2019/11/13.
 //  Copyright © 2019 kaito. All rights reserved.
 //
+//  loginするためのswift file
+//  login関連すべてを扱っている. 後々, logoutボタンも作成したい
+//
 
 import UIKit
 import Firebase
