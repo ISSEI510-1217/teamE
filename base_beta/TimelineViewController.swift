@@ -43,7 +43,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        database.collection("posts").order(by: "updatedAt").getDocuments { (snapshot, error) in
+        database.collection("posts").order(by: "updatedAt", descending: true ).getDocuments { (snapshot, error) in
             if error == nil, let snapshot = snapshot {
                 self.postArray = []
                 for document in snapshot.documents {
