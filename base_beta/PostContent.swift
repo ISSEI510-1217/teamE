@@ -15,11 +15,11 @@ class PostContent: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
     //[戻る]ボタン
-    @IBAction func backTable(_ sender: Any) {
+    @IBAction func backTiemline(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     /*
     // MARK: - Navigation
 
