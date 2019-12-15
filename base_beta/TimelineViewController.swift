@@ -99,6 +99,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        cell.textLabel?.numberOfLines=0
         cell.textLabel?.text = postArray[indexPath.row].content
       
         return cell
