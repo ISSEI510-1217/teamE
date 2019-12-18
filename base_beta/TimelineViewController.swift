@@ -15,28 +15,28 @@ import FirebaseFirestore
 
 
 class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-    
+
     @IBOutlet var tableView: UITableView!
-    
+
     var me: AppUser!
     var database: Firestore! // 宣言
-    
+
     //Post型の空の配列postArrayを定義
     var postArray: [Post] = []
-    
+
     var postArrayContents: [String] = []
-    
-    
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         database = Firestore.firestore() // 初期値代入
-        
+
 //        let press = UILongPressGestureRecognizer(target: self, action: #selector(pressScreen))
 //        press.minimumPressDuration = 1.5
 //        view.isUserInteractionEnabled = true
 //        view.addGestureRecognizer(press)
-        
+
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -54,10 +54,10 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
         tableView.tableHeaderView = searchBar
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        database.collection("posts").order(by: "updatedAt").getDocuments { (snapshot, error) in
+        database.collection("posts").order(by: "updatedAt", descending: true ).getDocuments { (snapshot, error) in
             if error == nil, let snapshot = snapshot {
                 self.postArray = []
                 self.postArrayContents = []
@@ -70,7 +70,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.tableView.reloadData()
             }
         }
-        
+
 //        database.collection("users").document(me.userID).setData([
 //            "userID": me.userID as Any
 //            ], merge: true)
@@ -81,7 +81,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            }
 //        }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "Add" {
 //            let destination = segue.destination as! AddViewController
@@ -94,12 +94,12 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //        let destination = segue.destination as! AddViewController // segue.destinationで遷移先のViewControllerが取得可能。
 //        destination.me = sender as? AppUser
     }
-    
+
 //    @objc
 //    func pressScreen() {
 //        performSegue(withIdentifier: "Settings", sender: me)
 //    }
-    
+
     // 投稿追加画面に遷移するボタンを押したときの動作を記述。
 //    @IBAction func toAddViewController(_ sender: Any) {
 //        performSegue(withIdentifier: "Add", sender: me)
@@ -115,7 +115,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
             return postArrayContents.count
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
             if searchBar.text != "" {
@@ -136,8 +136,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func MenuButton(_ sender: Any) {
         performSegue(withIdentifier: "Menu", sender: me)
     }
-    
-    
+
+
     var searchResults:[String] = []
     var searchBar = UISearchBar()
 
@@ -151,7 +151,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         self.tableView.reloadData()
     }
-    
+
     // キャンセルボタンが押された時に呼ばれる
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
@@ -159,7 +159,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         searchBar.text = ""
         self.tableView.reloadData()
     }
-    
+
     // テキストフィールド入力開始前に呼ばれる
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         searchBar.showsCancelButton = true
