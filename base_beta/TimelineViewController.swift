@@ -118,6 +118,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+            cell.textLabel?.numberOfLines=0
             if searchBar.text != "" {
                 cell.textLabel!.text = "\(searchResults[indexPath.row])"
             } else {

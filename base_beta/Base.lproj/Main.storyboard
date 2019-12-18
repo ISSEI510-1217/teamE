@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,7 +76,7 @@
                         <outlet property="mailField" destination="NxN-Z2-YdR" id="bZL-gf-W1Z"/>
                         <outlet property="numField" destination="EFL-kq-Djt" id="vmQ-5g-KBP"/>
                         <outlet property="passwordField" destination="37R-E3-ITP" id="96H-mN-fHJ"/>
-                        <segue destination="wqq-ig-lhG" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" id="Yfx-Fj-gp3"/>
+                        <segue destination="wqq-ig-lhG" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="Yfx-Fj-gp3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -119,7 +119,7 @@
                                 <state key="normal" title="⊕"/>
                                 <connections>
                                     <action selector="toAddViewController:" destination="hvl-Bu-lgI" eventType="touchUpInside" id="7uG-V9-Ego"/>
-                                    <segue destination="QaC-22-ujV" kind="presentation" identifier="Add" modalPresentationStyle="fullScreen" id="pTs-Uh-fHn"/>
+                                    <segue destination="QaC-22-ujV" kind="presentation" identifier="Add" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pTs-Uh-fHn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCW-Zp-jpR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1809" y="944"/>
+            <point key="canvasLocation" x="1770" y="944"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="OBl-sT-unM">
@@ -193,12 +193,12 @@
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="3qW-1u-jLR" id="6FK-bb-wFw"/>
-                        <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" id="jjc-Pz-gi2"/>
+                        <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="jjc-Pz-gi2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNM-4A-FQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2916" y="1697"/>
+            <point key="canvasLocation" x="2542.96875" y="1696.875"/>
         </scene>
         <!--Post Content-->
         <scene sceneID="qlM-rd-mif">
@@ -218,12 +218,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="hvl-Bu-lgI" kind="presentation" identifier="backTable" modalPresentationStyle="fullScreen" id="tjh-FZ-Wvv"/>
+                        <segue destination="hvl-Bu-lgI" kind="presentation" identifier="backTable" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tjh-FZ-Wvv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cag-62-S15" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="1697"/>
+            <point key="canvasLocation" x="958.59375" y="1696.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W6v-O5-Zsq">
@@ -269,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ll2-Qr-GUB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2916" y="192"/>
+            <point key="canvasLocation" x="2542.96875" y="191.6015625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tQT-H7-AX0">
@@ -293,8 +293,7 @@
         <image name="menu-filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bQI-fF-IFv"/>
-        <!-- <segue reference="Tzq-cI-Yem"/> -->
+        <segue reference="Pli-u1-MEH"/>
         <segue reference="tjh-FZ-Wvv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
