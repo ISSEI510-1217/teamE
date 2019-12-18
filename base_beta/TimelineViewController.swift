@@ -100,10 +100,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //        performSegue(withIdentifier: "Settings", sender: me)
 //    }
 
-    // 投稿追加画面に遷移するボタンを押したときの動作を記述。
-//    @IBAction func toAddViewController(_ sender: Any) {
-//        performSegue(withIdentifier: "Add", sender: me)
-//    }
     @IBAction func toAddViewController(_ sender: Any) {
         performSegue(withIdentifier: "Add", sender: me)
     }
@@ -117,15 +113,17 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
             cell.textLabel?.numberOfLines=0
+            cell.textLabel?.text = postArray[indexPath.row].content
+        
+        
             if searchBar.text != "" {
                 cell.textLabel!.text = "\(searchResults[indexPath.row])"
             } else {
                 cell.textLabel!.text = "\(postArrayContents[indexPath.row])"
             }
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-//        cell.textLabel?.text = postArray[indexPath.row].content
         return cell
 //        database.collection("users").document(postArray[indexPath.row].senderID).getDocument { (snapshot, error) in
 //                    if error == nil, let snapshot = snapshot, let data = snapshot.data() {
