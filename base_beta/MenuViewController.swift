@@ -11,15 +11,16 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
-
+class MenuViewController: UIViewController{
     @IBOutlet weak var menuView: UIView!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // メニューの位置を取得する
@@ -57,6 +58,8 @@ class MenuViewController: UIViewController {
             }
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 
