@@ -21,7 +21,7 @@ class AddViewController: UIViewController {
     var me: AppUser!
 
     //var DBRef: DatabaseReference!
-
+    var number: Int = 0
     var database: Firestore!
     
 
@@ -45,6 +45,7 @@ class AddViewController: UIViewController {
 
 
     @IBAction func postContent() {
+        number = number + 1
         let content = contentTextView.text!
         let saveDocument = Firestore.firestore().collection("posts").document()
         _ = Auth.auth().currentUser!.uid
