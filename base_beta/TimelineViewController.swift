@@ -1,18 +1,15 @@
 //
-//  TimelineViewController.swift
+//  TimeLineViewController.swift
 //  base_beta
 //
-//  Created by 後藤壱成 on 2019/11/28.
+//  Created by 後藤壱成 on 2019/12/19.
 //  Copyright © 2019 kaito. All rights reserved.
-//
 //  TimeLine画面についてswift file
 
-//
-
+ 
 import UIKit
 import Firebase
 import FirebaseFirestore
-
 
 class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
@@ -26,10 +23,11 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
     var postArrayContents: [String] = []
 
+ 
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+ 
+     override func viewDidLoad() {
+         super.viewDidLoad()
         database = Firestore.firestore() // 初期値代入
 
 //        let press = UILongPressGestureRecognizer(target: self, action: #selector(pressScreen))
@@ -51,10 +49,12 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         searchBar.placeholder = "Search"
 //        searchBar.setValue("Cancel", forKey: "_cancelButtonText")
 //        searchBar.tintColor = UIColor.red
-
+ 
         tableView.tableHeaderView = searchBar
-    }
 
+     }
+
+ 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         database.collection("posts").order(by: "updatedAt", descending: true ).getDocuments { (snapshot, error) in
@@ -81,8 +81,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            }
 //        }
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "Add" {
 //            let destination = segue.destination as! AddViewController
 //            destination.me = sender as? AppUser
@@ -93,8 +94,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
 //        let destination = segue.destination as! AddViewController // segue.destinationで遷移先のViewControllerが取得可能。
 //        destination.me = sender as? AppUser
-    }
-
+     }
+ 
 //    @objc
 //    func pressScreen() {
 //        performSegue(withIdentifier: "Settings", sender: me)
@@ -117,8 +118,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
             cell.textLabel?.numberOfLines=0
             cell.textLabel?.text = postArray[indexPath.row].content
-        
-        
+
+
             if searchBar.text != "" {
                 cell.textLabel!.text = "\(searchResults[indexPath.row])"
             } else {
@@ -139,7 +140,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
     var searchResults:[String] = []
     var searchBar = UISearchBar()
-
     // 検索ボタンが押された時に呼ばれる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
@@ -164,4 +164,4 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         searchBar.showsCancelButton = true
         return true
     }
-}
+ }
