@@ -20,6 +20,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
     var me: AppUser!
     var database: Firestore! // 宣言
+    var number: Int = 0
+    static var postID_dash: String = ""
+    
 
     //Post型の空の配列postArrayを定義
     var postArray: [Post] = []
@@ -70,7 +73,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.tableView.reloadData()
             }
         }
-
 //        database.collection("users").document(me.userID).setData([
 //            "userID": me.userID as Any
 //            ], merge: true)
@@ -118,7 +120,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.textLabel?.numberOfLines=0
             cell.textLabel?.text = postArray[indexPath.row].content
         
-        
             if searchBar.text != "" {
                 cell.textLabel!.text = "\(searchResults[indexPath.row])"
             } else {
@@ -131,6 +132,12 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //                        cell.detailTextLabel?.text = appUser.userName
 //                    }
 //                }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)番セルが選択されました")
+        print("postArray[indexPath.row].postID -> \(postArray[indexPath.row].postID)")
+        TimelineViewController.postID_dash = postArray[indexPath.row].postID
     }
     @IBAction func MenuButton(_ sender: Any) {
         performSegue(withIdentifier: "Menu", sender: me)
