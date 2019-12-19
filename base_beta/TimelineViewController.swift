@@ -6,7 +6,7 @@
 //  Copyright © 2019 kaito. All rights reserved.
 //  TimeLine画面についてswift file
 
- 
+
 import UIKit
 import Firebase
 import FirebaseFirestore
@@ -17,15 +17,18 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
     var me: AppUser!
     var database: Firestore! // 宣言
+    var number: Int = 0
+    static var postID_dash: String = ""
+
 
     //Post型の空の配列postArrayを定義
     var postArray: [Post] = []
 
     var postArrayContents: [String] = []
 
- 
 
- 
+
+
      override func viewDidLoad() {
          super.viewDidLoad()
         database = Firestore.firestore() // 初期値代入
@@ -49,15 +52,15 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         searchBar.placeholder = "Search"
 //        searchBar.setValue("Cancel", forKey: "_cancelButtonText")
 //        searchBar.tintColor = UIColor.red
- 
+
         tableView.tableHeaderView = searchBar
-        
+
         //TimeLineViewControllerのタイトルtext sizeの変更
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
 
      }
 
- 
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         database.collection("posts").order(by: "updatedAt", descending: true ).getDocuments { (snapshot, error) in
@@ -73,7 +76,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.tableView.reloadData()
             }
         }
-
 //        database.collection("users").document(me.userID).setData([
 //            "userID": me.userID as Any
 //            ], merge: true)
@@ -84,7 +86,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            }
 //        }
     }
- 
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "Add" {
@@ -98,7 +100,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //        let destination = segue.destination as! AddViewController // segue.destinationで遷移先のViewControllerが取得可能。
 //        destination.me = sender as? AppUser
      }
- 
+
 //    @objc
 //    func pressScreen() {
 //        performSegue(withIdentifier: "Settings", sender: me)
@@ -121,8 +123,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
             cell.textLabel?.numberOfLines=0
             cell.textLabel?.text = postArray[indexPath.row].content
-
-
             if searchBar.text != "" {
                 cell.textLabel!.text = "\(searchResults[indexPath.row])"
             } else {
@@ -135,6 +135,12 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //                        cell.detailTextLabel?.text = appUser.userName
 //                    }
 //                }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)番セルが選択されました")
+        print("postArray[indexPath.row].postID -> \(postArray[indexPath.row].postID)")
+        TimelineViewController.postID_dash = postArray[indexPath.row].postID
     }
     @IBAction func MenuButton(_ sender: Any) {
         performSegue(withIdentifier: "Menu", sender: me)

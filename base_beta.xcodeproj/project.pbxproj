@@ -13,8 +13,12 @@
 		60A0B293239DCFA0006AF664 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A0B292239DCFA0006AF664 /* MenuViewController.swift */; };
 		60A0B2A7239FFF8F006AF664 /* PostContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A0B2A6239FFF8F006AF664 /* PostContent.swift */; };
 		60AB24FC238F9B78005762AD /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AB24FB238F9B78005762AD /* AddViewController.swift */; };
+
 		60AECC1C23AB489C00C03782 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AECC1B23AB489C00C03782 /* TableViewCell.swift */; };
 		60AECC1E23AB4A2800C03782 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AECC1D23AB4A2800C03782 /* TimeLineViewController.swift */; };
+
+		6F2DAFC223A9FF0D00DFC199 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2DAFC123A9FF0D00DFC199 /* Reply.swift */; };
+
 		6F52FF4E237C506500DB3580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */; };
 		6FD71112237BDC0700974421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71111237BDC0700974421 /* AppDelegate.swift */; };
 		6FD71114237BDC0700974421 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD71113237BDC0700974421 /* SceneDelegate.swift */; };
@@ -53,8 +57,12 @@
 		60A0B292239DCFA0006AF664 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		60A0B2A6239FFF8F006AF664 /* PostContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContent.swift; sourceTree = "<group>"; };
 		60AB24FB238F9B78005762AD /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+
 		60AECC1B23AB489C00C03782 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		60AECC1D23AB4A2800C03782 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+
+		6F2DAFC123A9FF0D00DFC199 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+
 		6F52FF4D237C506500DB3580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6FD7110E237BDC0700974421 /* base_beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = base_beta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD71111237BDC0700974421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +159,7 @@
 				6FD71113237BDC0700974421 /* SceneDelegate.swift */,
 				603E7A5D23980108003C1732 /* AppUser.swift */,
 				603E7A5923975DB8003C1732 /* Post.swift */,
+				6F2DAFC123A9FF0D00DFC199 /* Reply.swift */,
 				6FD71115237BDC0700974421 /* ViewController.swift */,
 				60AECC1D23AB4A2800C03782 /* TimeLineViewController.swift */,
 				60AECC1B23AB489C00C03782 /* TableViewCell.swift */,
@@ -440,6 +449,7 @@
 				60A0B2A7239FFF8F006AF664 /* PostContent.swift in Sources */,
 				60AECC1C23AB489C00C03782 /* TableViewCell.swift in Sources */,
 				6FD71114237BDC0700974421 /* SceneDelegate.swift in Sources */,
+				6F2DAFC223A9FF0D00DFC199 /* Reply.swift in Sources */,
 				603E7A5A23975DB8003C1732 /* Post.swift in Sources */,
 				60A0B293239DCFA0006AF664 /* MenuViewController.swift in Sources */,
 			);
