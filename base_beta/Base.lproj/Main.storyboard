@@ -119,7 +119,7 @@
                                 <state key="normal" title="⊕"/>
                                 <connections>
                                     <action selector="toAddViewController:" destination="hvl-Bu-lgI" eventType="touchUpInside" id="7uG-V9-Ego"/>
-                                    <segue destination="QaC-22-ujV" kind="presentation" identifier="Add" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pTs-Uh-fHn"/>
+                                    <segue destination="amn-Q6-z2T" kind="presentation" identifier="Add" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="KO0-lN-a3Y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -142,7 +142,7 @@
             </objects>
             <point key="canvasLocation" x="1770" y="944"/>
         </scene>
-        <!--Add View Controller-->
+        <!--投稿内容-->
         <scene sceneID="OBl-sT-unM">
             <objects>
                 <viewController id="QaC-22-ujV" customClass="AddViewController" customModule="base_beta" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,15 +150,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="投稿内容" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iV-Df-6bg">
-                                <rect key="frame" x="247" y="127" width="274" height="121"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-1u-jLR">
-                                <rect key="frame" x="149" y="256" width="490" height="271"/>
+                                <rect key="frame" x="149" y="103" width="490" height="424"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -177,20 +170,17 @@
                                     <action selector="postContent" destination="QaC-22-ujV" eventType="touchUpInside" id="Qe6-gz-20l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-n2-6pe">
-                                <rect key="frame" x="56" y="60" width="101" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="backViewController:" destination="QaC-22-ujV" eventType="touchUpInside" id="vtK-us-x6C"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="wI6-gA-QJ7"/>
                     </view>
+                    <navigationItem key="navigationItem" title="投稿内容" id="GMN-fL-gXQ">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="0MW-UY-byC">
+                            <connections>
+                                <action selector="backTimeLine:" destination="QaC-22-ujV" id="QyO-7T-uNS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="3qW-1u-jLR" id="6FK-bb-wFw"/>
                         <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="jjc-Pz-gi2"/>
@@ -198,7 +188,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNM-4A-FQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2542.96875" y="1696.875"/>
+            <point key="canvasLocation" x="3562.5" y="1696.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4DW-y3-M9Y">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMO-jV-s8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="amn-Q6-z2T" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kbm-5O-9WL">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QaC-22-ujV" kind="relationship" relationship="rootViewController" id="x3V-c4-jef"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2543" y="1697"/>
         </scene>
         <!--Post Content-->
         <scene sceneID="qlM-rd-mif">
@@ -293,7 +299,7 @@
         <image name="menu-filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pIu-wn-ovr"/>
+        <segue reference="jjc-Pz-gi2"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

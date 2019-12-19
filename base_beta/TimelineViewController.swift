@@ -51,6 +51,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //        searchBar.tintColor = UIColor.red
  
         tableView.tableHeaderView = searchBar
+        
+        //TimeLineViewControllerのタイトルtext sizeの変更
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
 
      }
 

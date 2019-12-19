@@ -41,6 +41,12 @@ class AddViewController: UIViewController {
         // 枠を角丸にする場合
         contentTextView.layer.cornerRadius = 10.0
         contentTextView.layer.masksToBounds = true
+        
+        //AddViewControllerのタイトルtext sizeの変更
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
+        
+        //ContentTextViewの表示するTextSizeの変更
+        contentTextView.font = UIFont.systemFont(ofSize: 30)
     }
 
 
@@ -85,7 +91,7 @@ class AddViewController: UIViewController {
     }
     
     //[戻る]ボタン追加
-    @IBAction func backViewController(_ sender: Any) {
+    @IBAction func backTimeLine(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     

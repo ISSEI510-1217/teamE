@@ -12,8 +12,9 @@ class PostContent: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //PostContentのタイトルtext sizeの変更
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
     }
     //[戻る]ボタン
     @IBAction func backTiemline(_ sender: Any) {
