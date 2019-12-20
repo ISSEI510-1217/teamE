@@ -18,15 +18,20 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
     var database1: Firestore!
     var replyArray: [Reply] = []
     var number = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //PostContentのタイトルtext sizeの変更
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
+
         database1 = Firestore.firestore()
         reply_tableView.delegate = self
         reply_tableView.dataSource = self
         // Do any additional setup after loading the view.
+
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //ここは読み込み
@@ -64,11 +69,11 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
 
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return replyArray.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let reply_cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell_reply", for: indexPath)
