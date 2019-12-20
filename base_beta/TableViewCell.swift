@@ -2,11 +2,8 @@
 //  TableViewCell.swift
 //  base_beta
 //
-//  Created by 後藤壱成 on 2019/12/11.
+//  Created by 後藤壱成 on 2019/12/19.
 //  Copyright © 2019 kaito. All rights reserved.
-//
-//  TimeLineに存在している各Cellに干渉できるようにしたswift file
-//  
 //
 
 import UIKit

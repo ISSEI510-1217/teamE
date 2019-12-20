@@ -106,7 +106,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="oQZ-Jd-7Cg" kind="presentation" modalPresentationStyle="fullScreen" id="Pli-u1-MEH"/>
+                                            <segue destination="oQZ-Jd-7Cg" kind="presentation" id="lCR-qZ-Bcq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,7 +119,7 @@
                                 <state key="normal" title="⊕"/>
                                 <connections>
                                     <action selector="toAddViewController:" destination="hvl-Bu-lgI" eventType="touchUpInside" id="7uG-V9-Ego"/>
-                                    <segue destination="QaC-22-ujV" kind="presentation" identifier="Add" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pTs-Uh-fHn"/>
+                                    <segue destination="amn-Q6-z2T" kind="presentation" identifier="Add" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="KO0-lN-a3Y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -140,9 +140,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCW-Zp-jpR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="944"/>
+            <point key="canvasLocation" x="1769.53125" y="943.94531249999989"/>
         </scene>
-        <!--Add View Controller-->
+        <!--投稿内容-->
         <scene sceneID="OBl-sT-unM">
             <objects>
                 <viewController id="QaC-22-ujV" customClass="AddViewController" customModule="base_beta" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,15 +150,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="投稿内容" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iV-Df-6bg">
-                                <rect key="frame" x="247" y="127" width="274" height="121"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-1u-jLR">
-                                <rect key="frame" x="149" y="256" width="490" height="271"/>
+                                <rect key="frame" x="149" y="103" width="490" height="424"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -177,20 +170,17 @@
                                     <action selector="postContent" destination="QaC-22-ujV" eventType="touchUpInside" id="Qe6-gz-20l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-n2-6pe">
-                                <rect key="frame" x="56" y="60" width="101" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="backViewController:" destination="QaC-22-ujV" eventType="touchUpInside" id="vtK-us-x6C"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="wI6-gA-QJ7"/>
                     </view>
+                    <navigationItem key="navigationItem" title="投稿内容" id="GMN-fL-gXQ">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="0MW-UY-byC">
+                            <connections>
+                                <action selector="backTimeLine:" destination="QaC-22-ujV" id="QyO-7T-uNS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="3qW-1u-jLR" id="6FK-bb-wFw"/>
                         <segue destination="hvl-Bu-lgI" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="jjc-Pz-gi2"/>
@@ -198,7 +188,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNM-4A-FQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2542.96875" y="1696.875"/>
+            <point key="canvasLocation" x="3562.5" y="1696.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4DW-y3-M9Y">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMO-jV-s8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="amn-Q6-z2T" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kbm-5O-9WL">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QaC-22-ujV" kind="relationship" relationship="rootViewController" id="x3V-c4-jef"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2543" y="1697"/>
         </scene>
         <!--Post Content-->
         <scene sceneID="qlM-rd-mif">
@@ -207,6 +213,43 @@
                     <view key="view" contentMode="scaleToFill" id="8RO-jO-UR9">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xCj-0Q-kTV">
+                                <rect key="frame" x="0.0" y="391" width="768" height="355"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_reply" rowHeight="90" id="xkR-nZ-vCR" customClass="TableViewCell" customModule="base_beta" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="768" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xkR-nZ-vCR" id="NEP-WO-wYy" customClass="UITableViewCell">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="94U-mC-t99">
+                                <rect key="frame" x="110" y="754" width="638" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA3-QG-Itz">
+                                <rect key="frame" x="571" y="880" width="121" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="返信"/>
+                                <connections>
+                                    <action selector="reply_button:" destination="7E9-jF-aH2" eventType="touchUpInside" id="z3a-Ia-QLk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="e7b-RY-sbk"/>
                     </view>
@@ -218,6 +261,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reply_contentTextView" destination="94U-mC-t99" id="k48-rz-W1N"/>
+                        <outlet property="reply_tableView" destination="xCj-0Q-kTV" id="Twe-Gn-JRs"/>
                         <segue destination="hvl-Bu-lgI" kind="presentation" identifier="backTable" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tjh-FZ-Wvv"/>
                     </connections>
                 </viewController>
@@ -228,7 +273,7 @@
         <!--Navigation Controller-->
         <scene sceneID="W6v-O5-Zsq">
             <objects>
-                <navigationController id="oQZ-Jd-7Cg" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="oQZ-Jd-7Cg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xbJ-pp-Xfp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -293,7 +338,7 @@
         <image name="menu-filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tjh-FZ-Wvv"/>
+        <segue reference="jjc-Pz-gi2"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
