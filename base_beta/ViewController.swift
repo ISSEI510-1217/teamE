@@ -22,22 +22,25 @@ class ViewController: UIViewController{
     @IBOutlet weak var passwordField: UITextField!
     var DBRef: DatabaseReference!
     var handle: AuthStateDidChangeListenerHandle?
-
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     override func viewDidAppear(_ animated: Bool){
-        handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
-            if user != nil {
-                self.performSegue(withIdentifier: "toMainView", sender: auth)
-            }
-        }
+//        handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
+//            if user != nil {
+//                self.performSegue(withIdentifier: "toMainView", sender: auth)
+//            }
+//        }
     }
     
     @IBAction func pushed_signup_button(_ sender: Any) {
         let email = mailField.text!
         let password = passwordField.text!
+        MyPageViewController.num = numField.text!
+        MyPageViewController.degree = degreeField.text!
         if password.count < 6 {
             let alert = UIAlertController(title: "パスワードエラー", message: "パスワードは６文字上にしてください。", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -63,6 +66,8 @@ class ViewController: UIViewController{
     @IBAction func pushed_login_button(_ sender: Any) {
         let email = mailField.text!
         let password = passwordField.text!
+        MyPageViewController.degree = degreeField.text!
+        MyPageViewController.num = numField.text!
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error == nil, let result = result, result.user.isEmailVerified {
                 self.performSegue(withIdentifier: "toMainView", sender: result.user)

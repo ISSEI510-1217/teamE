@@ -3,23 +3,33 @@
 //  base_beta
 //
 //  Created by 山本勝己 on 2019/12/18.
-//  Copyright © 2019 kaito. All rights reserved.
+//  Copyright © 2019  . All rights reserved.
 //
 
 import UIKit
+import FirebaseFirestore
+import Firebase
 
 class MyPageViewController: UIViewController {
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
+    static var degree : String = ""
+    static var num :String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        label1.text = "email address:"
-        label2.text = "student number:"
-        label3.text = "degree:"
-        label4.text = "password:"
+        let user = Auth.auth().currentUser
+        let email = user?.email
+        label1.text = email
+        label2.text = MyPageViewController.degree
+        label3.text = MyPageViewController.num
+        
+            
+        }
+       
+        
+       
         // Do any additional setup after loading the view.
     }
     
@@ -34,4 +44,4 @@ class MyPageViewController: UIViewController {
     }
     */
 
-}
+

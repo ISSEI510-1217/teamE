@@ -15,13 +15,19 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBOutlet weak var reply_contentTextView: UITextView!
     @IBOutlet weak var reply_tableView: UITableView!
+    @IBOutlet weak var QuestionContent: UILabel!
+    @IBOutlet weak var editbutton: UIButton!
+    
     var database1: Firestore!
     var replyArray: [Reply] = []
-    var number = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if TimelineViewController.userID != Auth.auth().currentUser?.uid{//editbutton表示
+            editbutton.isHidden = true
+        }
+        QuestionContent.text = TimelineViewController.content_dash//質問の表示
         //PostContentのタイトルtext sizeの変更
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
 
