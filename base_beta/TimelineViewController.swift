@@ -19,8 +19,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     var database: Firestore! // 宣言
     var number: Int = 0
     static var postID_dash: String = ""
-
-
+    static var content_dash: String = ""
+    static var userID: String = ""
+    static var createdAt: Timestamp = Timestamp.init()
     //Post型の空の配列postArrayを定義
     var postArray: [Post] = []
 
@@ -63,7 +64,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        database.collection("posts").order(by: "updatedAt", descending: true ).getDocuments { (snapshot, error) in
+        database.collection("post").order(by: "updatedAt", descending: true ).getDocuments { (snapshot, error) in
             if error == nil, let snapshot = snapshot {
                 self.postArray = []
                 self.postArrayContents = []
@@ -141,6 +142,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         print("\(indexPath.row)番セルが選択されました")
         print("postArray[indexPath.row].postID -> \(postArray[indexPath.row].postID)")
         TimelineViewController.postID_dash = postArray[indexPath.row].postID
+        TimelineViewController.content_dash = postArray[indexPath.row].content
+        TimelineViewController.userID = postArray[indexPath.row].userID
+        TimelineViewController.createdAt = postArray[indexPath.row].createdAt
     }
     @IBAction func MenuButton(_ sender: Any) {
         performSegue(withIdentifier: "Menu", sender: me)

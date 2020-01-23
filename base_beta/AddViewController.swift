@@ -51,9 +51,9 @@ class AddViewController: UIViewController {
 
 
     @IBAction func postContent() {
-        number = number + 1
         let content = contentTextView.text!
-        let saveDocument = Firestore.firestore().collection("posts").document()
+        let user = Auth.auth().currentUser?.uid
+        let saveDocument = Firestore.firestore().collection("post").document()
         _ = Auth.auth().currentUser!.uid
         saveDocument.setData([
             "content": content,//投稿内容
@@ -61,6 +61,7 @@ class AddViewController: UIViewController {
             //"senderID": me.userID!,
             "createdAt": FieldValue.serverTimestamp(),//質問した日時
             "updatedAt": FieldValue.serverTimestamp(),//最新の変更時刻
+            "userID": user ?? "匿名", //質問者のID
         ]) { error in
             if error == nil {
                 self.dismiss(animated: true, completion: nil)
