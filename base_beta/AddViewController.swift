@@ -23,30 +23,25 @@ class AddViewController: UIViewController {
     //var DBRef: DatabaseReference!
     var number: Int = 0
     var database: Firestore!
-    
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupTextView()
-        database = Firestore.firestore()
-
+    func contentTextView_option(){
         // 枠のカラー
-        contentTextView.layer.borderColor = UIColor.red.cgColor
-
+        contentTextView.layer.borderColor = UIColor.blue.cgColor
         // 枠の幅
-        contentTextView.layer.borderWidth = 1.0
-
+        contentTextView.layer.borderWidth = 2.0
         // 枠を角丸にする場合
         contentTextView.layer.cornerRadius = 10.0
         contentTextView.layer.masksToBounds = true
-        
-        //AddViewControllerのタイトルtext sizeの変更
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
-        
         //ContentTextViewの表示するTextSizeの変更
         contentTextView.font = UIFont.systemFont(ofSize: 30)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTextView()
+        database = Firestore.firestore()
+        contentTextView_option()
+        //AddViewControllerのタイトルtext sizeの変更
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
     }
 
 
@@ -96,5 +91,4 @@ class AddViewController: UIViewController {
     @IBAction func backTimeLine(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }

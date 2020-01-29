@@ -12,6 +12,14 @@ import QuartzCore
 
 class EditContentViewController: UIViewController {
     @IBOutlet weak var edit: UITextView!
+    //editのUI設定関数
+    func edit_optin(){
+        //枠線のUI
+        edit.layer.borderColor = UIColor.blue.cgColor
+        edit.layer.borderWidth = 2.0
+        edit.layer.cornerRadius = 10.0
+        edit.layer.masksToBounds = true
+    }
     @IBAction func repostcontent(_ sender: Any) {
         let content = edit.text!
         //let user = Auth.auth().currentUser?.uid
@@ -31,11 +39,11 @@ class EditContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        edit_optin()
         edit.text = TimelineViewController.content_dash
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -45,5 +53,4 @@ class EditContentViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

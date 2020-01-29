@@ -26,14 +26,13 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     override func viewDidAppear(_ animated: Bool){
-//        handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
-//            if user != nil {
-//                self.performSegue(withIdentifier: "toMainView", sender: auth)
-//            }
-//        }
+        handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
+            if user != nil {
+                self.performSegue(withIdentifier: "toMainView", sender: auth)
+            }
+        }
     }
     
     @IBAction func pushed_signup_button(_ sender: Any) {
