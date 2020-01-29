@@ -8,18 +8,13 @@
 //  Menu barのためだけのswift file
 //  ここに追加したいmenu buttonを追加していく.
 //
-
 import UIKit
 
 class MenuViewController: UIViewController{
     @IBOutlet weak var menuView: UIView!
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,8 +53,6 @@ class MenuViewController: UIViewController{
             }
         }
     }
-    
-    
     /*
     // MARK: - Navigation
 
@@ -69,5 +62,4 @@ class MenuViewController: UIViewController{
         // Pass the selected object to the new view controller.
     }
     */
-
 }

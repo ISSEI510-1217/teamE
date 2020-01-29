@@ -52,7 +52,6 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
         reply_tableView.delegate = self
         reply_tableView.dataSource = self
         // Do any additional setup after loading the view.
-
     }
 
     override func viewWillAppear(_ animated: Bool) {

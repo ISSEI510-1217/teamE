@@ -43,7 +43,6 @@ class EditContentViewController: UIViewController {
         edit.text = TimelineViewController.content_dash
         // Do any additional setup after loading the view.
     }
-    
     /*
     // MARK: - Navigation
 

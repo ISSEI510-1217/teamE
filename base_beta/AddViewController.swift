@@ -44,7 +44,6 @@ class AddViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
     }
 
-
     @IBAction func postContent() {
         let content = contentTextView.text!
         let user = Auth.auth().currentUser?.uid
@@ -86,7 +85,6 @@ class AddViewController: UIViewController {
     @objc func dismissKeyboard() {
         contentTextView.resignFirstResponder()
     }
-    
     //[戻る]ボタン追加
     @IBAction func backTimeLine(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
