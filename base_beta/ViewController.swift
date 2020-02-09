@@ -28,11 +28,11 @@ class ViewController: UIViewController{
         super.viewDidLoad()
     }
     override func viewDidAppear(_ animated: Bool){
-        handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
-            if user != nil {
-                self.performSegue(withIdentifier: "toMainView", sender: auth)
-            }
-        }
+//        handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
+//            if user != nil {
+//                self.performSegue(withIdentifier: "toMainView", sender: auth)
+//            }
+//        }
     }
     
     @IBAction func pushed_signup_button(_ sender: Any) {
@@ -67,13 +67,20 @@ class ViewController: UIViewController{
         let password = passwordField.text!
         MyPageViewController.degree = degreeField.text!
         MyPageViewController.num = numField.text!
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if error == nil, let result = result, result.user.isEmailVerified {
-                self.performSegue(withIdentifier: "toMainView", sender: result.user)
-            } else if error != nil {
-                let alert = UIAlertController(title: "ログインエラー", message: "パスワードまたはメールアドレスが違います。", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+        handle = Auth.auth().addStateDidChangeListener{auth, user in //ログイン画面飛ばすやつ
+            if user != nil {
+                self.performSegue(withIdentifier: "toMainView", sender: auth)
+                
+            }else {
+                Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                    if error == nil, let result = result, result.user.isEmailVerified {
+                        self.performSegue(withIdentifier: "toMainView", sender: result.user)
+                    } else if error != nil {
+                        let alert = UIAlertController(title: "ログインエラー", message: "パスワードまたはメールアドレスが違います。", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
             }
         }
     }
@@ -87,7 +94,7 @@ class ViewController: UIViewController{
         let email_degree = ["email":mailField.text!, "degree": degreeField.text!, "学籍番号": numField.text!]
         DBRef.child("users").child(userID).setValue(email_degree)
     }
-
+    
     //実装途中
     @IBAction func pushed_Logout_button(_ sender: Any) {
         _ = Auth.auth()
