@@ -24,11 +24,16 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     //Post型の空の配列postArrayを定義
     var postArray: [Post] = []
     var postArrayContents: [String] = []
-
-     override func viewDidLoad() {
-         super.viewDidLoad()
+    func tableView_option(){
+        tableView.layer.borderColor = UIColor.blue.cgColor
+        tableView.layer.borderWidth = 5.0
+//        tableView.layer.cornerRadius = 10.0
+//        tableView.layer.masksToBounds = true
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         database = Firestore.firestore() // 初期値代入
-
+        //tableView_option()
 //        let press = UILongPressGestureRecognizer(target: self, action: #selector(pressScreen))
 //        press.minimumPressDuration = 1.5
 //        view.isUserInteractionEnabled = true
@@ -52,7 +57,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
         //TimeLineViewControllerのタイトルtext sizeの変更
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
-     }
+        let tblBackColor: UIColor = UIColor.clear
+        tableView.backgroundColor = tblBackColor
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -113,6 +120,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
             cell.textLabel?.numberOfLines=0
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 20)
             cell.textLabel?.text = postArray[indexPath.row].content
             if searchBar.text != "" {
                 cell.textLabel!.text = "\(searchResults[indexPath.row])"

@@ -27,6 +27,7 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
         reply_contentTextView.layer.borderWidth = 2.0
         reply_contentTextView.layer.cornerRadius = 10.0
         reply_contentTextView.layer.masksToBounds = true
+        reply_contentTextView.font = UIFont.systemFont(ofSize: 30)
     }
     //QuestionContentのUI設定関数
     func QuestionContent_option(){
@@ -35,6 +36,7 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
         QuestionContent.layer.borderWidth = 2.0
         QuestionContent.layer.cornerRadius = 10.0
         QuestionContent.layer.masksToBounds = true
+        QuestionContent.font = UIFont.systemFont(ofSize: 30)
     }
 
     override func viewDidLoad() {

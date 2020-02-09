@@ -19,6 +19,8 @@ class EditContentViewController: UIViewController {
         edit.layer.borderWidth = 2.0
         edit.layer.cornerRadius = 10.0
         edit.layer.masksToBounds = true
+        edit.font = UIFont.systemFont(ofSize: 30)
+        
     }
     @IBAction func repostcontent(_ sender: Any) {
         let content = edit.text!
