@@ -11,7 +11,7 @@
 
 import Foundation
 import Firebase
-
+//投稿内容の変数定義
 struct Post {
     let content: String
     let postID: String
@@ -20,7 +20,7 @@ struct Post {
     let createdAt: Timestamp
     let updatedAt: Timestamp
     let userID: String
-    
+    //変数の型指定
     init(data: [String: Any]) {
         content = data["content"] as! String
         postID = data["postID"] as! String

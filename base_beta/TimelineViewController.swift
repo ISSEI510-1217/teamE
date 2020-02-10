@@ -14,7 +14,6 @@ import FirebaseFirestore
 class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet var tableView: UITableView!
-
     var me: AppUser!
     var database: Firestore! // 宣言
     var number: Int = 0
@@ -24,16 +23,17 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     static var createdAt: Timestamp = Timestamp.init()
     //Post型の空の配列postArrayを定義
     var postArray: [Post] = []
-
     var postArrayContents: [String] = []
-
-
-
-
-     override func viewDidLoad() {
-         super.viewDidLoad()
+    func tableView_option(){
+        tableView.layer.borderColor = UIColor.blue.cgColor
+        tableView.layer.borderWidth = 5.0
+//        tableView.layer.cornerRadius = 10.0
+//        tableView.layer.masksToBounds = true
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         database = Firestore.firestore() // 初期値代入
-
+        //tableView_option()
 //        let press = UILongPressGestureRecognizer(target: self, action: #selector(pressScreen))
 //        press.minimumPressDuration = 1.5
 //        view.isUserInteractionEnabled = true
@@ -53,14 +53,13 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         searchBar.placeholder = "Search"
 //        searchBar.setValue("Cancel", forKey: "_cancelButtonText")
 //        searchBar.tintColor = UIColor.red
-
         tableView.tableHeaderView = searchBar
 
         //TimeLineViewControllerのタイトルtext sizeの変更
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
-
-     }
-
+        let tblBackColor: UIColor = UIColor.clear
+        tableView.backgroundColor = tblBackColor
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -87,7 +86,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            }
 //        }
     }
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "Add" {
@@ -97,7 +95,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            let destination = segue.destination as! MenuViewController
 //            destination.me = me//sender as? AppUser
 //        }
-
 //        let destination = segue.destination as! AddViewController // segue.destinationで遷移先のViewControllerが取得可能。
 //        destination.me = sender as? AppUser
      }
@@ -123,6 +120,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
             cell.textLabel?.numberOfLines=0
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 25)
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 20)
             cell.textLabel?.text = postArray[indexPath.row].content
             if searchBar.text != "" {
                 cell.textLabel!.text = "\(searchResults[indexPath.row])"
@@ -150,7 +149,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         performSegue(withIdentifier: "Menu", sender: me)
     }
 
-
     var searchResults:[String] = []
     var searchBar = UISearchBar()
     // 検索ボタンが押された時に呼ばれる
@@ -163,7 +161,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         self.tableView.reloadData()
     }
-
     // キャンセルボタンが押された時に呼ばれる
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
@@ -171,7 +168,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         searchBar.text = ""
         self.tableView.reloadData()
     }
-
     // テキストフィールド入力開始前に呼ばれる
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         searchBar.showsCancelButton = true

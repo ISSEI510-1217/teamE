@@ -20,10 +20,29 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     var database1: Firestore!
     var replyArray: [Reply] = []
-    
+    //reply_contentTextViewのUI設定関数
+    func reply_contentTextView_option(){
+        //枠線のUI
+        reply_contentTextView.layer.borderColor = UIColor.blue.cgColor
+        reply_contentTextView.layer.borderWidth = 2.0
+        reply_contentTextView.layer.cornerRadius = 10.0
+        reply_contentTextView.layer.masksToBounds = true
+        reply_contentTextView.font = UIFont.systemFont(ofSize: 30)
+    }
+    //QuestionContentのUI設定関数
+    func QuestionContent_option(){
+        //枠線のUI
+        QuestionContent.layer.borderColor = UIColor.blue.cgColor
+        QuestionContent.layer.borderWidth = 2.0
+        QuestionContent.layer.cornerRadius = 10.0
+        QuestionContent.layer.masksToBounds = true
+        QuestionContent.font = UIFont.systemFont(ofSize: 30)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        reply_contentTextView_option()
+        QuestionContent_option()
         if TimelineViewController.userID != Auth.auth().currentUser?.uid{//editbutton表示
             editbutton.isHidden = true
         }
@@ -35,7 +54,6 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
         reply_tableView.delegate = self
         reply_tableView.dataSource = self
         // Do any additional setup after loading the view.
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +91,6 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 self.dismiss(animated: true, completion: nil)
             }
         }
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,7 +104,6 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
         reply_cell.textLabel!.text = replyArray[indexPath.row].reply_content
         return reply_cell
     }
-
     /*
     // MARK: - Navigation
 
@@ -97,5 +113,4 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
         // Pass the selected object to the new view controller.
     }
     */
-
 }

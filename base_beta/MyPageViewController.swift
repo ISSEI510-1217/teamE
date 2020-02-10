@@ -24,16 +24,7 @@ class MyPageViewController: UIViewController {
         label1.text = email
         label2.text = MyPageViewController.degree
         label3.text = MyPageViewController.num
-        
-            
-        }
-       
-        
-       
-        // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 
@@ -43,5 +34,5 @@ class MyPageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+}
 
