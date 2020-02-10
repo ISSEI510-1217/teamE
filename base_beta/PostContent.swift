@@ -46,7 +46,8 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
         if TimelineViewController.userID != Auth.auth().currentUser?.uid{//editbutton表示
             editbutton.isHidden = true
         }
-        QuestionContent.text = TimelineViewController.content_dash//質問の表示
+        QuestionContent.text =
+            TimelineViewController.content_dash//質問の表示
         //PostContentのタイトルtext sizeの変更
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 35)!]
 
@@ -100,6 +101,7 @@ class PostContent: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
         let reply_cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell_reply", for: indexPath)
+        reply_cell.textLabel?.numberOfLines=0
         // セルに表示する値を設定する
         reply_cell.textLabel!.text = replyArray[indexPath.row].reply_content
         return reply_cell
